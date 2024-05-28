@@ -1,7 +1,7 @@
-const fs = require('node:fs');
+const fs = require('fs');
 const http = require('http');
 // const server = http.createServer();
-const readline = require('readline');
+
 const path = require('path')
 const { URLSearchParams } = require('url');
 
@@ -54,17 +54,27 @@ const server = http.createServer((req,res) => {
         res.writeHead(200, { "Content-Type": "text/html; charset=utf-8"})
         res.end(data);
       });
-    } 
-  
+    }
+    // if(req.url === "style.css"){
+    // fs.readFile(path.join(__dirname, "style.css"), (err, data) => {
+    //   if (err) {
+    //     res.writeHead(500, {"Content-Type": "text/plain"});
+    //     res.end("500 code는 서버 자체의 에러");
+    //     return;
+    //   }
+    //   res.writeHead(200, { "Content-Type": "text/html; charset=utf-8"})
+    //   res.end(data);
+    // });}
     else {
       res.writeHead(404, {"Content-Type": "text/plain; charset=utf-8"});
       res.end("404 code는 페이지를 찾을 수 없음");
       return;
     }
-    
+
+
   }else
   if (req.method === "POST") {
-    if (req.url === "/submit"){
+    if (req.url === "/test"){
       let body = "";
       req.on("data", (chunk) => {
         body += chunk.toString();
@@ -96,26 +106,15 @@ const server = http.createServer((req,res) => {
       res.writeHead(404, {"Content-Type": "text/plain; charset=utf-8"})
       res.end("404 code는 페이지를 찾을 수 없음")
     }
+  } else {
+    res.writeHead(404, {"Content-Type": "text/plain; charset=utf-8"})
+    res.end("404 code는 페이지를 찾을 수 없음")
   }
-})
-
-
-
-
-
-
-
-
-
-
+});
 
 
 //! 서버 실행
-server.listen(8000, (error) => {
-  if(error) {
-    console.log('Error: ', error);
-  } else {
-    console.log('서버돌아감');
-    console.log(`http://localhost:8000/`);
+server.listen(8080, () => {
+    console.log(`http://localhost:8080/`);
   }
-});
+);
