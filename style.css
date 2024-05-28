@@ -1,0 +1,31 @@
+.root{
+  padding: 0;
+  margin: 0;
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  grid-template-rows: auto;
+}
+
+.record{
+  background-color: grey;
+  grid-template-columns: 100px;
+  grid-template-rows: auto;
+  text-align: center;
+  padding: 10px;
+  gap: 20px;
+}
+
+.title{
+  background-color: #89cff0;
+  grid-template-columns: 80vw;
+  margin: 10px;
+}
+.details{
+  background-color: #89cff0;
+  margin: 10px;
+}
+
+.date{
+  background-color: #89cff0;
+  margin: 10px;
+}
