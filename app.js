@@ -58,7 +58,7 @@ const server = http.createServer((req,res) => {
           return;
         }
         console.log("congratulation!")
-        
+        // res.write()
         return;
 
       });
