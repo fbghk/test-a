@@ -9,34 +9,47 @@
 </head>
 <body>
   <div id = "root" class = "root">
-    <form action="/test" method = "POST" >
+    <form action="/test" method = "POST" class = "create">
         <input type = "text" id = "title" name="title" placeholder="title"></input><br><br>
         <textarea id = "details" name="content" placeholder="details"></textarea><br><br>
-        <input type = "submit" value="Submit"></input>
+        <input type = "submit" value="Submit" ></input>
     </form> 
-    <form action="/save" id = "saved-list" class="date" method="post">
+    <div action="/save" id = "savedlist" class="date" method="post">
 
-    </form>
+    </div>
   </div>
   <script>
     // function testreset(){  //reset 기능
     //   document.getElementById("chrlghk").reset();
     // }
+  //   function myFunction() {
 
+  //   const node = document.createElement("p")
+  //   const tit = document.getElementById("title")
+  //   const textnode = document.createTextNode(`${tit}`)
+  //   console.log(textnode)
+  //   node.appendChild(textnode);
+  //   document.getElementById("savedlist").appendChild(node);
+
+  // }onclick="myFunction()"
+  const tit = document.getElementById("title")
+  const textnode = document.createTextNode(`${tit}`)
+    console.log(textnode)
+    // function myFunction() {
+      
+    //   const det = document.getElementById("details")
+    //   const SavedList = document.getElementById("savedlist")
+
+    //   const fragment = document.createDocumentFragment();
+    //   const testtest = fragment
+    //       .appendChild(document.createElement("div"))
+    //       .appendChild(document.createElement("input"))
+    //       .appendChild(document.createElement("textarea"))
+    //       testtest.textContent = `${tit}`;
+    //       testtest.textContent = `${tit}`;
+    //   savedList.appendChild(savedData);
+    // }
     
-    // const savedlist = document.getElementById("saved-list")
-    // const tit = document.getElementById("title")
-    // const det = document.getElementById("details")
-    //appendchild();
-    
-    // document.addEventListener("click", testreset);
-
-    
-
-    
-
-
-    // document.getElementById("myForm").submit();
   </script>
 </body>
 </html>
