@@ -19,8 +19,8 @@ input, textarea{
   margin: 10px;
 }
 
-.date{
-  border-radius: 10% 10%;
+.data{
+  /* border-radius: 5% 5% 5% 5%; */
   background-color: #53778F;
-  margin: 10px;
+  margin: 10px 0px 0px 10px;
 }
