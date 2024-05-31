@@ -25,17 +25,23 @@
     function printtitle()  {
       const wpahr = document.getElementById('title').value;
       const sodyd = document.getElementById('details').value;
-
-      const inPut = document.createElement('input');
-      const item = document.createElement('textarea');
+      // const testobj = {}
+      // testobj.push(wpahr, sodyd)
+     
+      // const inPut = document.createElement('input');
+      // const item = document.createElement('textarea');
+     
       // const ttdiv = document.createElement('#savedtitle');
       // const dtdiv = document.createElement('#saveddetails');
       const sdl = document.getElementById("savedlist");
-      sdl.appendChild(inPut)
-      sdl.appendChild(item)
-      inPut.innerHTML= wpahr;
-      item.innerHTML= sodyd;
+      const article = document.createElement("article");
+      const testtitle = document.createElement("h3");
+      const testdetails = document.createElement("span");
+      sdl.appendChild(article);
+      article.appendChild(testtitle, testdetails);
+      
     }
+
     const sssubmit = document.getElementById("submit");
     sssubmit.addEventListener("click", printtitle)
     
