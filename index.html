@@ -19,19 +19,22 @@
     </section>
   </div>
   <script>
-    function testreset(){  //reset 기능
-      document.getElementById("").reset();
-    }
+    // function testreset(){  //reset 기능
+    //   document.getElementById("").reset();
+    // }
     function printtitle()  {
       const wpahr = document.getElementById('title').value;
       const sodyd = document.getElementById('details').value;
-      const testarray = []
-      testarray.push(wpahr, sodyd);
-      console.log(testarray)
-      const item = document.createElement('div');
+
+      const inPut = document.createElement('input');
+      const item = document.createElement('textarea');
+      // const ttdiv = document.createElement('#savedtitle');
+      // const dtdiv = document.createElement('#saveddetails');
       const sdl = document.getElementById("savedlist");
+      sdl.appendChild(inPut)
       sdl.appendChild(item)
-      item.innerText= testarray;
+      inPut.innerHTML= wpahr;
+      item.innerHTML= sodyd;
     }
     const sssubmit = document.getElementById("submit");
     sssubmit.addEventListener("click", printtitle)
