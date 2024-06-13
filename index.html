@@ -15,32 +15,41 @@
         <input type = "submit" id = "submit" class = "submit" value="Submit"></input>
     </form> 
     <section id = "savedlist" class="data">
-      <!-- <div id='result'></div> -->
+      <div id='result'></div>
     </section>
   </div>
   <script>
-    // function testreset(){  //reset 기능
-    //   document.getElementById("").reset();
-    // }
+    
     function printtitle()  {
       const wpahr = document.getElementById('title').value;
       const sodyd = document.getElementById('details').value;
-      // const testobj = {}
-      // testobj.push(wpahr, sodyd)
-     
-      // const inPut = document.createElement('input');
-      // const item = document.createElement('textarea');
-     
-      // const ttdiv = document.createElement('#savedtitle');
-      // const dtdiv = document.createElement('#saveddetails');
       const sdl = document.getElementById("savedlist");
       const article = document.createElement("article");
-      const testtitle = document.createElement("h3");
-      const testdetails = document.createElement("span");
+      const title = document.createElement("h3");
+      const details = document.createElement("ul");
+      const date = document.createElement("p");
+      const small = document.createElement("small");
+      const today = new Date();
+      const formatDate = `${today.getFullYear()}-${today.getMonth()+1}-${today.getDate()} ${today.getHours()}:${today.getMinutes()}:${today.getSeconds()}`;
+
       sdl.appendChild(article);
-      article.appendChild(testtitle, testdetails);
+      article.appendChild(title);
+      article.appendChild(details);
+      article.appendChild(date);
+      date.appendChild(small)
+      title.innerHTML = wpahr;
+      details.innerHTML = sodyd;
+      small.innerHTML = formatDate;
       
+      
+
+      
+
+
     }
+    
+    
+
 
     const sssubmit = document.getElementById("submit");
     sssubmit.addEventListener("click", printtitle)
