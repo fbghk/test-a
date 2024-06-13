@@ -40,18 +40,22 @@ const server = http.createServer((req,res) => {
         body += chunk.toString();
       });
 
+      //! recording data
     req.on("end", ()=> {
       const parsedData = new URLSearchParams(body);
       const title = parsedData.get ("title");
       const content = parsedData.get ("content");
+      
 
       const jsonData = {
         title: title,
         content: content,
+      
       };
 
+      //! saving data 
       const jsonDataString = JSON.stringify(jsonData, null, 2)
-      fs.writeFile(path.join("./test", `${title}.json`), jsonDataString, (err) => {
+      fs.writeFile(path.join("./saved", `${title}.json`), jsonDataString, (err) => {
         if(err){
           res.writeHead(500, { "Content-Type": "text/plain; charset=utf-8"})
           res.end('서버 자체 에러');
@@ -62,6 +66,7 @@ const server = http.createServer((req,res) => {
         return;
 
       });
+
     });
     } else {
       res.writeHead(404, {"Content-Type": "text/plain; charset=utf-8"})
